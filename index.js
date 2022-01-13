@@ -39,11 +39,25 @@ inquirer.prompt ([
     const manager = new Manager(data.name, data.id, data.email, data.officeNumber)
 employees.push(manager)  
 //call next prompt function that lets you pick next employee to add using more enquire prompts  
-})
 
+nextEmployee();
+})
+inquirer
+    .prompt([
+        {
+            type: 'list',
+            name: 'nextEmployee',
+            message: 'Whom should be added next?',
+            choices: ['Engineer', 'Intern'],
+        },
+    ])
+    .then(answers => {
+        console.info('Answer:', answers.choices);
+    });
  //THEN create and store an object for the manager 
 
  //THEN `ask what they want to do next'
+ 
 
 //Ask them for engineer info
 
