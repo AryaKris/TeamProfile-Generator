@@ -45,7 +45,7 @@ THEN I exit the application, and the HTML is generated
   * Uses the [Inquirer package](https://www.npmjs.com/package/inquirer).
   * Uses the [Jest package](https://www.npmjs.com/package/jest) for a suite of unit tests.
 
-  ## Contribution
+  ## Contributing
 
   Please follow the fork and pull Git workflow. 
 
