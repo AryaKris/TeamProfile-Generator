@@ -12,7 +12,8 @@ const Intern = require('./lib/Intern');
 const employees = [];
 
 //prompt the user for the data for Manager
-inquirer.prompt ([
+
+ inquirer.prompt ([
     {
     type: 'input',
     message: 'What is your name?',
@@ -38,12 +39,12 @@ inquirer.prompt ([
     console.log(data);
     const manager = new Manager(data.name, data.id, data.email, data.officeNumber)
 employees.push(manager)  
+console.log(manager);
 //call next prompt function that lets you pick next employee to add using more enquire prompts  
 
-nextEmployee();
-})
-inquirer
-    .prompt([
+// nextEmployee();
+
+    return inquirer.prompt([
         {
             type: 'list',
             name: 'nextEmployee',
@@ -51,9 +52,14 @@ inquirer
             choices: ['Engineer', 'Intern'],
         },
     ])
-    .then(answers => {
-        console.info('Answer:', answers.choices);
-    });
+        .then(answers => {
+            console.info('Answer:', answers.choices);
+        });
+
+})
+
+
+
  //THEN create and store an object for the manager 
 
  //THEN `ask what they want to do next'
