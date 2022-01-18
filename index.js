@@ -6,11 +6,11 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Employee = require("./lib/Employee");
+const generateHtml = require('./src/generateHtml.js');
 
 //Ask them for manager info
 
 const employees = [];
-const exitLoop = true;
 
 //prompt the user for the data for Manager
 init();
@@ -47,7 +47,7 @@ function init(){
         .then(function (data) {
             console.log("Comment1");
             const manager = new Manager(data.name, data.id, data.email, data.officeNumber);
-            employees.push(new Employee(manager));
+            employees.push(manager);
             // employees.push(manager);
             console.log('Manager: ', manager);
             switch (data.addMember) {
@@ -97,7 +97,7 @@ const engineerQuestions = () => {
         .then(function (engineerData) {
             console.log("engineer:", engineerData);
             const engineer = new Engineer(engineerData.name, engineerData.id, engineerData.email, engineerData.gitHub);
-            employees.push(new Employee(engineer));
+            employees.push(engineer);
             switch (engineerData.addMember) {
                 case 'Engineer':
                     engineerQuestions();
@@ -148,7 +148,7 @@ const internQuestions = () => {
         .then(function (internData) {            
             const intern = new Intern(internData.name, internData.id, internData.email, internData.school);
             const employee = new Employee(intern);
-            employees.push(new Employee(intern));
+            employees.push(intern);
             console.log("intern:", employee);
             switch (internData.addMember) {
                 case 'Engineer':
@@ -158,13 +158,22 @@ const internQuestions = () => {
                     internQuestions();
                     break;
                 default:
-                    employees.forEach(function (arrayItem) {
-                        console.log(arrayItem);
-                    });
+                    createHtml();
+                    
             }
         });
 }
 
 // Add employee, and intern, Be done
+
 //If they want to be done, use all of the collected employee data to build an HTML
+
+
+
+function createHtml(){
+var html = generateHtml(employees);
+fs.writeFile ('./src/teamprofile.html',html,(err) =>
+err ?console.log(err) : console.log('succesfully created teamprofile.html'))
+}//generating the string to look like HTML from employees array
+
 
