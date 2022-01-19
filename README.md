@@ -35,6 +35,12 @@ THEN I exit the application, and the HTML is generated
   * [Tests](#tests)
   * [Questions](#questions)
 
+
+## Walkthrough Video
+
+![AryaKris README Generator](./dist/TeamProfile Generator.gif)
+
+* Full Link - https://watch.screencastify.com/v/lFp4nVEDsc9femAwOoNt
   ## Installation
  Application uses Jest for running the unit tests nad Inquirer fir collecting input from the user. The application is invoked by using the following command - node index.js
 

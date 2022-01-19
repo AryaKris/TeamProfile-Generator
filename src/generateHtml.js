@@ -39,6 +39,8 @@ function generateHtml(employees) {
 </head>
 
 <body>
+    <div class="row">
+  <div class="col-sm-6">
     <div class="card text-dark bg-info mb-3 " style="max-width: 18rem; ">
 ${allCards}
     </div>
