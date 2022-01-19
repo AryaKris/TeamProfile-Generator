@@ -38,7 +38,7 @@ THEN I exit the application, and the HTML is generated
 
 ## Walkthrough Video
 
-![AryaKris README Generator](./dist/TeamProfile Generator.gif)
+![AryaKris README Generator](./dist/TeamProfile.gif)
 
 * Full Link - https://watch.screencastify.com/v/lFp4nVEDsc9femAwOoNt
   ## Installation
