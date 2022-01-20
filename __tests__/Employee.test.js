@@ -5,41 +5,34 @@ describe("Employees", () => {
     describe ("Initialization", () => {
         //Testing of object properties after constructing a new instance
         it("should build with prop x when give y", ()=> {
-            const obj = new Employee("Manoj", "757865", "hgchg@gvhg.com");
-            expect("name" in obj).toEqual(true);
+            const employee = new Employee('Arya', 11, 'dr.aryakris@gmail.com');
+
+            expect(employee.name).toEqual(expect.any(String));
+            expect(employee.id).toEqual(expect.any(Number));
+            expect(employee.email).toEqual(expect.any(String));
         });
     });
 
     describe("getName", () =>{
-        //Arrange
-        //Create a new Employee object
-        const emp1 = new Employee("Manoj","757865","hgchg@gvhg.com");
-
-        //Act
-        //Call the getName method and store the result
-        const name = emp1.getName();
-
-        //Assert
-        //The result is equal to an expected values
-        expect("Manoj").toEqual(name);
+     it ("should get the name of the employee", ()=>{
+         const employee = new Employee('Arya', 11, 'dr.aryakris@gmail.com') ;  
+         expect(employee.getName()).toEqual(expect.any(String));
+     })   
     });
 
     describe("getId", () => {
-        //Arrange
-        //Create a new Employee object
-        const emp2 = new Employee("Arya", "121", "hgchg@gvhg.com");
-
-        //Act
-        //Call the getName method and store the result
-        const id = emp2.getId();
-
-        //Assert
-        //The result is equal to an expected value
-        expect("121").toEqual(id);
+        it("should get the employee id", () => {
+            const employee = new Employee('Arya', 11, 'dr.aryakris@gmail.com');
+            expect(employee.getId()).toEqual(expect.any(Number));
+        })  
 
     });
 
     describe("getEmail", () => {
+        it("should get the email", () => {
+            const employee = new Employee('Arya', 11, 'dr.aryakris@gmail.com');
+            expect(employee.getEmail()).toEqual(expect.stringContaining(employee.email.toString()));
+        })  
 
     });
 });
