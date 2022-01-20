@@ -40,7 +40,10 @@ THEN I exit the application, and the HTML is generated
 
 ![AryaKris README Generator](./dist/TeamProfile.gif)
 
-* Full Link - https://watch.screencastify.com/v/lFp4nVEDsc9femAwOoNt
+* Full Link to the functionality of the application - https://watch.screencastify.com/v/lFp4nVEDsc9femAwOoNt
+
+* Link on passing the test - https://watch.screencastify.com/v/E7DdWgpwUM86sakov9vR
+
   ## Installation
  Application uses Jest for running the unit tests nad Inquirer fir collecting input from the user. The application is invoked by using the following command - node index.js
 
