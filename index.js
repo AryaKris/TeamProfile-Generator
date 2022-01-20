@@ -168,8 +168,6 @@ const internQuestions = () => {
 
 //If they want to be done, use all of the collected employee data to build an HTML
 
-
-
 function createHtml(){
 var html = generateHtml(employees);
 fs.writeFile ('./src/teamprofile.html',html,(err) =>
